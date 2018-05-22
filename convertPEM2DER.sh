@@ -3,3 +3,5 @@
 openssl pkcs12 -export -out outcert.p12 -in $1 -inkey $2
 openssl pkcs12 -in outcert.p12 -out outcerts.crt -nokeys -clcerts
 openssl x509 -inform pem -in outcerts.crt -outform der -out $3
+rm -f outcert.p12
+rm -f outcerts.crt
